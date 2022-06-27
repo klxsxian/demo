@@ -1,0 +1,13 @@
+demo:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      threads: 1
+      host: 124.221.124.73
+      port: 15432
+      user: postgres
+      pass: jtw9k7frcB-72s^EI
+      dbname: postgres
+      #schema: schema_dbt
+      schema: dbt_demo

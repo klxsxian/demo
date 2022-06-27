@@ -2,3 +2,12 @@
 target/
 dbt_packages/
 logs/
+/.idea/.gitignore
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/demo.iml
+/.idea/git_toolbox_prj.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/codeStyles/Project.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
