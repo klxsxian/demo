@@ -9,7 +9,8 @@ import pygit2
 DBT_PROJECT = "demo"
 STORAGE = GitHub(
     repo="klxsxian/demo",
-    path=f"flows/sample.py"
+    path=f"flows/sample.py",
+    access_token_secret="GITHUB_ACCESS_TOKEN",
 )
 
 dbt = DbtShellTask(
@@ -43,7 +44,7 @@ def pull_dbt_repo():
     pygit2.clone_repository(url="https://github.com/klxsxian/demo",
                             path=DBT_PROJECT, checkout_branch=None)
 
-with Flow("sample", run_config=LocalRun(labels=["myAgent"],env={"GITLAB_ACCESS_TOKEN": "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"})) as flow:
+with Flow("sample", run_config=LocalRun(labels=["myAgent"],env={"GITHUB_ACCESS_TOKEN": "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"})) as flow:
     pull_task = pull_dbt_repo()
     dbt_run = dbt(command="dbt run", task_args={"name": "DBT Run"})
     dbt_run_out = print_dbt_output(dbt_run)
